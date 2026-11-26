@@ -69,7 +69,7 @@ built on the same architecture, but for movies instead of TV shows.
 - Card width **and height** are resizable by dragging in modern "Sections"
   dashboards, filling exactly the assigned grid cell
 - Own icon/logo under Settings → Devices & Services (Home Assistant 2026.3+)
-- Card UI in **English and German**, following the language of the logged-in
+- Card UI in **English, German and French**, following the language of the logged-in
   Home Assistant user (other languages fall back to English)
 - A sensor entity per tracked movie (status + `available_on` list of your own
   providers currently streaming it) for use in automations, e.g. "notify me
@@ -270,13 +270,15 @@ automation:
   streaming availability, so only that is refreshed periodically (every 12
   hours for watchlist movies; archived movies are skipped) and can also be
   refreshed on demand when opening a movie's detail view.
-- **Languages:** The card UI is available in English and German and follows
+- **Languages:** The card UI is available in English, German and French and follows
   the language of the logged-in Home Assistant user (all other languages fall
   back to English). Further languages can be added without touching any code:
   put a `<lang>.json` file (e.g. `fr.json`) into
   `custom_components/ha_moviesdb/www/translations/`, using the keys from the `en`
   block at the top of `ha-moviesdb-card.js` – missing keys fall back to English. Pull
-  requests with new languages are welcome. Titles and descriptions are
+  requests with new languages are welcome. The setup and options dialogs are
+  translated separately, in `custom_components/ha_moviesdb/translations/<lang>.json`
+  (same structure as `en.json`). Titles and descriptions are
   requested from TMDB in the Home Assistant language (see below).
 - Titles, descriptions and posters are requested from TMDB in the language
   configured in Home Assistant (e.g. `de` -> `de-DE`, `en` -> `en-US`; falls

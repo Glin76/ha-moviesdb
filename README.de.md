@@ -75,7 +75,7 @@ Architektur, aber für Filme statt Serien.
   Ziehen anpassbar und füllen die zugewiesene Rasterzelle exakt aus
 - Eigenes Icon/Logo unter Einstellungen → Geräte & Dienste (Home Assistant
   2026.3+)
-- Kartenoberfläche auf **Deutsch und Englisch**, abhängig von der Sprache des
+- Kartenoberfläche auf **Deutsch, Englisch und Französisch**, abhängig von der Sprache des
   angemeldeten Home-Assistant-Benutzers (andere Sprachen fallen auf Englisch
   zurück)
 - Eine Sensor-Entität pro verfolgtem Film (Status + `available_on`-Liste der
@@ -291,13 +291,16 @@ automation:
   aufgefrischt (alle 12 Stunden für Filme auf der Watchlist, archivierte
   Filme werden übersprungen) und lässt sich zusätzlich gezielt beim Öffnen
   der Detailansicht aktualisieren.
-- **Sprachen:** Die Kartenoberfläche gibt es auf Deutsch und Englisch; sie
+- **Sprachen:** Die Kartenoberfläche gibt es auf Deutsch, Englisch und Französisch; sie
   folgt der Sprache des angemeldeten Home-Assistant-Benutzers (alle anderen
   Sprachen fallen auf Englisch zurück). Weitere Sprachen lassen sich ohne
   Codeänderung ergänzen: eine Datei `<sprache>.json` (z.B. `fr.json`) unter
   `custom_components/ha_moviesdb/www/translations/` ablegen, mit den Schlüsseln
   aus dem `en`-Block am Anfang von `ha-moviesdb-card.js` – fehlende Schlüssel fallen auf
-  Englisch zurück. Pull Requests mit neuen Sprachen sind willkommen. Titel und
+  Englisch zurück. Pull Requests mit neuen Sprachen sind willkommen. Einrichtungs- und
+  Options-Dialog werden getrennt übersetzt, in
+  `custom_components/ha_moviesdb/translations/<sprache>.json` (gleiche Struktur
+  wie `en.json`). Titel und
   Beschreibungen werden von TMDB in der Home-Assistant-Sprache abgefragt (siehe
   unten).
 - Titel, Beschreibungen und Poster werden von TMDB in der in Home Assistant
