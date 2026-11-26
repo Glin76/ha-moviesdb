@@ -1,0 +1,52 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "HA MoviesDB",
+        "description": "Entrez votre clé API themoviedb.org (TMDB). Vous pouvez en créer une ici {url}.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reauthentification HA MoviesDB",
+        "description": "themoviedb.org a rejeté la clé API. Entrez une nouvelle clé API. Vous pouvez en créer une ici {url}.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "La clé API a été rejeté par themoviedb.org.",
+      "cannot_connect": "Impossible de se connecter à themoviedb.org."
+    },
+    "abort": {
+      "already_configured": "HA MoviesDB est déjà configuré.",
+      "reauth_successful": "La clé API a été mise à jour avec succès."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Paramétrages HA MoviesDB",
+        "description": "Choisissez la région à utiliser pour la disponibilité du streaming, vos services souscrits et jusqu'à 4 personnes pour qui les films pourront être taggés. Les personnes ne s’affichent sur les affiches que lorsque plusieurs d’entre elles sont sélectionnées. La modification de la région ne prend pleinement effet qu’à la prochaine ouverture de cette fenêtre de dialogue.",
+        "data": {
+          "region": "Region",
+          "provider_ids": "My streaming providers",
+          "person_ids": "People"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de charger les données de région/fournisseur depuis themoviedb.org ; utilisation d’une liste de secours.",
+      "too_many_persons": "vous ne pouvez sélectionner que 4 profils maximum."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "movie_status": {
+        "name": "Status"
+      }
+    }
+  }
+}
